@@ -1,0 +1,54 @@
+precision mediump float;
+#define LOWPREC lowp
+// Uniforms look like they're shared between vertex and fragment shaders in GLSL, so we have to be careful to avoid name clashes
+
+uniform sampler2D gm_BaseTexture;
+
+uniform bool gm_PS_FogEnabled;
+uniform vec4 gm_FogColour;
+uniform bool gm_AlphaTestEnabled;
+uniform float gm_AlphaRefValue;
+
+void DoAlphaTest(vec4 SrcColour)
+{
+	if (gm_AlphaTestEnabled)
+	{
+		if (SrcColour.a <= gm_AlphaRefValue)
+		{
+			discard;
+		}
+	}
+}
+
+void DoFog(inout vec4 SrcColour, float fogval)
+{
+	if (gm_PS_FogEnabled)
+	{
+		SrcColour = mix(SrcColour, gm_FogColour, clamp(fogval, 0.0, 1.0)); 
+	}
+}
+
+#define _YY_GLSLES_ 1
+varying vec2 v_vTexcoord;
+varying vec4 v_vColour;
+uniform float u_Position;
+
+// https://en.wikipedia.org/wiki/YIQ
+
+const mat3 rgb2yiq = mat3(0.299, 0.587, 0.114, 0.595716, -0.274453, -0.321263, 0.211456, -0.522591, 0.311135);
+const mat3 yiq2rgb = mat3(1.0, 0.9563, 0.6210, 1.0, -0.2721, -0.6474, 1.0, -1.1070, 1.7046);
+
+void main()
+{
+    vec4 tColor = texture2D(gm_BaseTexture, v_vTexcoord);
+    vec3 yColor = (tColor.rgb * v_vColour.rgb) * rgb2yiq; 
+
+    float originalHue = atan(yColor.b, yColor.g);
+    float finalHue = originalHue + u_Position;
+
+    float chroma = sqrt(yColor.b * yColor.b + yColor.g * yColor.g);
+    
+    vec3 yFinalColor = vec3(yColor.r, chroma * cos(finalHue), chroma * sin(finalHue));
+    
+    gl_FragColor = vec4(yFinalColor * yiq2rgb, tColor.a * v_vColour.a);
+}
