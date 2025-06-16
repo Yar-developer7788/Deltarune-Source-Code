@@ -1,0 +1,51 @@
+.localvar 2 arguments
+
+:[0]
+pushi.e -5
+pushi.e 1
+push.v [array]self.currentsong
+call.i gml_Script_snd_is_playing(argc=1)
+conv.v.b
+not.b
+bf [2]
+
+:[1]
+push.i 231459
+setowner.e
+push.s "bird.ogg"@19774
+conv.s.v
+call.i gml_Script_snd_init(argc=1)
+pushi.e -5
+pushi.e 0
+pop.v.v [array]self.currentsong
+pushi.e 1
+conv.i.v
+pushi.e 1
+conv.i.v
+pushi.e -5
+pushi.e 0
+push.v [array]self.currentsong
+call.i gml_Script_mus_loop_ext(argc=3)
+pushi.e -5
+pushi.e 1
+pop.v.v [array]self.currentsong
+
+:[2]
+pushi.e 1
+pop.v.i self.image_index
+pushi.e 0
+pop.v.i self.image_speed
+pushi.e 1
+pop.v.i self.visible
+pushbltn.v builtin.room
+push.v self.room_field_start
+cmp.v.v NEQ
+bf [end]
+
+:[3]
+pushi.e 0
+pop.v.i self.visible
+call.i instance_destroy(argc=0)
+popz.v
+
+:[end]

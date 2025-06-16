@@ -1,0 +1,15 @@
+.localvar 2 arguments
+
+:[0]
+push.v self.pos
+push.v self.length
+pushi.e 2
+add.i.v
+cmp.v.v LT
+bf [end]
+
+:[1]
+call.i gml_Script_scr_textsound_ch1(argc=0)
+popz.v
+
+:[end]

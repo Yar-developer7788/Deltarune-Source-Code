@@ -1,0 +1,90 @@
+.localvar 2 arguments
+
+:[0]
+push.v self.normalanim
+pushi.e 1
+cmp.i.v EQ
+bf [9]
+
+:[1]
+push.v self.myinteract
+pushi.e 0
+cmp.i.v GT
+bf [3]
+
+:[2]
+pushi.e 64
+conv.i.v
+call.i instance_exists(argc=1)
+conv.v.b
+b [4]
+
+:[3]
+push.e 0
+
+:[4]
+bf [9]
+
+:[5]
+push.v 64.halt
+pushi.e 0
+cmp.i.v GT
+bf [7]
+
+:[6]
+pushi.e 0
+pop.v.i self.image_speed_fake
+pushi.e 0
+pop.v.i self.image_index_fake
+
+:[7]
+push.v 64.halt
+pushi.e 0
+cmp.i.v EQ
+bf [9]
+
+:[8]
+push.v self.remanimspeed
+pop.v.v self.image_speed_fake
+
+:[9]
+push.v self.normalanim
+pushi.e 1
+cmp.i.v EQ
+bt [11]
+
+:[10]
+push.v self.normalanim
+pushi.e 2
+cmp.i.v EQ
+b [12]
+
+:[11]
+push.e 1
+
+:[12]
+bf [15]
+
+:[13]
+push.v self.myinteract
+pushi.e 0
+cmp.i.v EQ
+bf [15]
+
+:[14]
+pushi.e 0
+pop.v.i self.image_index_fake
+pushi.e 0
+pop.v.i self.image_speed_fake
+
+:[15]
+push.v self.normalanim
+pushi.e 3
+cmp.i.v EQ
+bf [end]
+
+:[16]
+push.d 0.25
+pop.v.d self.image_speed_fake
+
+:[end]

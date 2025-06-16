@@ -1,0 +1,23 @@
+.localvar 2 arguments
+
+:[0]
+b [2]
+
+> gml_Script_snd_stop_all (locals=0, argc=0)
+:[1]
+call.i audio_stop_all(argc=0)
+popz.v
+exit.i
+
+:[2]
+push.i [function]gml_Script_snd_stop_all
+conv.i.v
+pushi.e -1
+conv.i.v
+call.i method(argc=2)
+dup.v 0
+pushi.e -1
+pop.v.v [stacktop]self.snd_stop_all
+popz.v
+
+:[end]

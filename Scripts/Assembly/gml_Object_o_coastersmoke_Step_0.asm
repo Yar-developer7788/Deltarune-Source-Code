@@ -1,0 +1,17 @@
+.localvar 2 arguments
+
+:[0]
+push.v self.hspeed
+pushi.e 2
+sub.i.v
+pop.v.v self.hspeed
+push.v self.image_index
+pushi.e 4
+cmp.i.v GTE
+bf [end]
+
+:[1]
+call.i instance_destroy(argc=0)
+popz.v
+
+:[end]

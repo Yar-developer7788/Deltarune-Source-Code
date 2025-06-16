@@ -1,0 +1,28 @@
+.localvar 2 arguments
+
+:[0]
+push.i 231591
+setowner.e
+push.v self.x
+pushi.e -5
+push.v self.myself
+conv.v.i
+pop.v.v [array]self.monsterx
+push.i 231592
+setowner.e
+push.v self.y
+push.v self.sprite_height
+pushi.e 2
+conv.i.d
+div.d.v
+sub.v.v
+pushi.e 30
+sub.i.v
+pushi.e -5
+push.v self.myself
+conv.v.i
+pop.v.v [array]self.monstery
+call.i gml_Script_scr_monstersetup_ch1(argc=0)
+popz.v
+
+:[end]

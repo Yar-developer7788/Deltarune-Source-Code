@@ -1,0 +1,419 @@
+.localvar 2 arguments
+
+:[0]
+pushi.e 0
+pop.v.i self.char
+pushi.e 0
+pop.v.i self.myself
+pushi.e 0
+pop.v.i self.points
+pushi.e 0
+pop.v.i self.becomeflash
+pushi.e 0
+pop.v.i self.state
+pushi.e 0
+pop.v.i self.flash
+pushi.e 0
+pop.v.i self.siner
+pushi.e 0
+pop.v.i self.fsiner
+pushi.e 0
+pop.v.i self.attacktimer
+pushi.e 0
+pop.v.i self.attacked
+pushi.e 1
+pop.v.i self.combatdarken
+pushi.e 0
+pop.v.i self.darkentimer
+pushi.e 0
+pop.v.i self.darkify
+pushi.e 2
+pop.v.i self.image_xscale
+pushi.e 2
+pop.v.i self.image_yscale
+pushi.e 37
+pop.v.i self.myheight
+pushi.e 34
+pop.v.i self.mywidth
+pushi.e 0
+pop.v.i self.index
+pushi.e 0
+pop.v.i self.specdraw
+pushi.e 0
+pop.v.i self.is_auto_susie
+pushi.e 0
+pop.v.i self.poisonamount
+pushi.e 0
+pop.v.i self.poisontimer
+pushi.e 0
+pop.v.i self._sideb
+pushi.e 0
+pop.v.i self._victoried
+pushi.e 653
+pop.v.i self.normalsprite
+pushi.e 1422
+pop.v.i self.idlesprite
+pushi.e 1416
+pop.v.i self.actreadysprite
+pushi.e 1415
+pop.v.i self.actsprite
+pushi.e 1420
+pop.v.i self.hurtsprite
+pushi.e 1414
+pop.v.i self.defendsprite
+pushi.e 1414
+pop.v.i self.attackreadysprite
+pushi.e 1419
+pop.v.i self.attacksprite
+pushi.e 1418
+pop.v.i self.itemsprite
+pushi.e 1417
+pop.v.i self.itemreadysprite
+pushi.e 1499
+pop.v.i self.spellreadysprite
+pushi.e 1498
+pop.v.i self.spellsprite
+pushi.e 1413
+pop.v.i self.defeatsprite
+pushi.e 1411
+pop.v.i self.victorysprite
+pushi.e 0
+pop.v.i self.victoryanim
+pushi.e 7
+pop.v.i self.actframes
+pushi.e 9
+pop.v.i self.victoryframes
+pushi.e 1
+pop.v.i self.defendframes
+pushi.e 3
+pop.v.i self.itemframes
+pushi.e 3
+pop.v.i self.attackframes
+push.d 0.5
+pop.v.d self.attackspeed
+pushi.e 7
+pop.v.i self.actframes
+pushi.e 10
+pop.v.i self.actreturnframes
+pushi.e 10
+pop.v.i self.spellframes
+pushi.e 0
+pop.v.i self.hurt
+pushi.e 0
+pop.v.i self.hurttimer
+pushi.e 0
+pop.v.i self.hurtindex
+pushi.e 0
+pop.v.i self.acttimer
+pushi.e 0
+pop.v.i self.defendtimer
+pushi.e 0
+pop.v.i self.itemed
+pushi.e 0
+pop.v.i self.tu
+push.v self.object_index
+pushi.e 372
+cmp.i.v EQ
+bf [2]
+
+:[1]
+pushi.e 653
+pop.v.i self.normalsprite
+pushi.e 1422
+pop.v.i self.idlesprite
+pushi.e 1423
+pop.v.i self.defendsprite
+pushi.e 1420
+pop.v.i self.hurtsprite
+pushi.e 1414
+pop.v.i self.attackreadysprite
+pushi.e 1419
+pop.v.i self.attacksprite
+pushi.e 1418
+pop.v.i self.itemsprite
+pushi.e 1416
+pop.v.i self.actreadysprite
+pushi.e 1415
+pop.v.i self.actsprite
+pushi.e 1417
+pop.v.i self.itemreadysprite
+pushi.e 1416
+pop.v.i self.spellreadysprite
+pushi.e 1415
+pop.v.i self.spellsprite
+pushi.e 1413
+pop.v.i self.defeatsprite
+pushi.e 1411
+pop.v.i self.victorysprite
+pushi.e 7
+pop.v.i self.actframes
+pushi.e 10
+pop.v.i self.actreturnframes
+pushi.e 6
+pop.v.i self.attackframes
+pushi.e 6
+pop.v.i self.itemframes
+pushi.e 5
+pop.v.i self.defendframes
+pushi.e 10
+pop.v.i self.spellframes
+push.d 0.5
+pop.v.d self.attackspeed
+push.v self.victorysprite
+call.i sprite_get_number(argc=1)
+pop.v.v self.victoryframes
+pushi.e 68
+pop.v.i self.mywidth
+pushi.e 74
+pop.v.i self.myheight
+
+:[2]
+push.v self.object_index
+pushi.e 373
+cmp.i.v EQ
+bf [6]
+
+:[3]
+pushi.e 5
+pop.v.i self.attackframes
+pushi.e 5
+pop.v.i self.itemframes
+pushi.e 5
+pop.v.i self.defendframes
+pushi.e 7
+pop.v.i self.actframes
+pushi.e 10
+pop.v.i self.actreturnframes
+pushi.e 8
+pop.v.i self.spellframes
+push.d 0.5
+pop.v.d self.attackspeed
+pushi.e 986
+pop.v.i self.normalsprite
+pushi.e 1438
+pop.v.i self.idlesprite
+pushi.e 1445
+pop.v.i self.defendsprite
+pushi.e 1444
+pop.v.i self.hurtsprite
+pushi.e 1440
+pop.v.i self.actreadysprite
+pushi.e 1441
+pop.v.i self.actsprite
+pushi.e 1452
+pop.v.i self.attackreadysprite
+pushi.e 1449
+pop.v.i self.attacksprite
+pushi.e -5
+pushi.e 2
+push.v [array]self.charweapon
+pushi.e 0
+cmp.i.v EQ
+bf [5]
+
+:[4]
+pushi.e 1448
+pop.v.i self.idlesprite
+pushi.e 1454
+pop.v.i self.attackreadysprite
+pushi.e 1451
+pop.v.i self.attacksprite
+
+:[5]
+pushi.e 1443
+pop.v.i self.itemsprite
+pushi.e 1442
+pop.v.i self.itemreadysprite
+pushi.e 1437
+pop.v.i self.spellreadysprite
+pushi.e 1439
+pop.v.i self.spellsprite
+pushi.e 1447
+pop.v.i self.defeatsprite
+pushi.e 1436
+pop.v.i self.victorysprite
+push.v self.victorysprite
+call.i sprite_get_number(argc=1)
+pop.v.v self.victoryframes
+pushi.e 70
+pop.v.i self.mywidth
+pushi.e 82
+pop.v.i self.myheight
+
+:[6]
+push.v self.object_index
+pushi.e 374
+cmp.i.v EQ
+bf [8]
+
+:[7]
+pushi.e 6
+pop.v.i self.attackframes
+pushi.e 6
+pop.v.i self.itemframes
+pushi.e 7
+pop.v.i self.defendframes
+pushi.e 8
+pop.v.i self.actframes
+pushi.e 12
+pop.v.i self.actreturnframes
+push.d 0.5
+pop.v.d self.attackspeed
+pushi.e 795
+pop.v.i self.normalsprite
+pushi.e 1512
+pop.v.i self.idlesprite
+pushi.e 1508
+pop.v.i self.defendsprite
+pushi.e 1511
+pop.v.i self.hurtsprite
+pushi.e 1505
+pop.v.i self.attackreadysprite
+pushi.e 1504
+pop.v.i self.attacksprite
+pushi.e 1513
+pop.v.i self.itemsprite
+pushi.e 1514
+pop.v.i self.itemreadysprite
+pushi.e 1516
+pop.v.i self.spellreadysprite
+pushi.e 1515
+pop.v.i self.spellsprite
+pushi.e 1507
+pop.v.i self.defeatsprite
+pushi.e 1517
+pop.v.i self.victorysprite
+pushi.e 1503
+pop.v.i self.actreadysprite
+pushi.e 1502
+pop.v.i self.actsprite
+push.v self.victorysprite
+call.i sprite_get_number(argc=1)
+pop.v.v self.victoryframes
+pushi.e 52
+pop.v.i self.mywidth
+pushi.e 86
+pop.v.i self.myheight
+
+:[8]
+push.v self.object_index
+pushi.e 375
+cmp.i.v EQ
+bf [18]
+
+:[9]
+pushi.e 4
+pop.v.i self.attackframes
+pushi.e 9
+pop.v.i self.itemframes
+pushi.e 0
+pop.v.i self.defendframes
+pushi.e 7
+pop.v.i self.actframes
+pushi.e 11
+pop.v.i self.actreturnframes
+push.d 0.5
+pop.v.d self.attackspeed
+pushi.e 6
+pop.v.i self.spellframes
+pushi.e 724
+pop.v.i self.normalsprite
+pushi.e 1538
+pop.v.i self.idlesprite
+pushglb.v global.encounterno
+pushi.e 73
+cmp.i.v EQ
+bf [11]
+
+:[10]
+pushi.e 717
+pop.v.i self.idlesprite
+
+:[11]
+pushi.e 1536
+pop.v.i self.defendsprite
+pushi.e 1537
+pop.v.i self.hurtsprite
+pushi.e 1529
+pop.v.i self.attackreadysprite
+pushi.e 1528
+pop.v.i self.attacksprite
+pushi.e 1541
+pop.v.i self.itemsprite
+pushi.e 1540
+pop.v.i self.itemreadysprite
+pushi.e 1525
+pop.v.i self.spellreadysprite
+pushglb.v global.encounterno
+pushi.e 82
+cmp.i.v EQ
+bf [13]
+
+:[12]
+pushi.e 1525
+pop.v.i self.spellreadysprite
+
+:[13]
+pushi.e 1526
+pop.v.i self.spellsprite
+pushi.e 1535
+pop.v.i self.defeatsprite
+pushi.e 1530
+pop.v.i self.victorysprite
+pushi.e 1533
+pop.v.i self.actreadysprite
+pushi.e 1532
+pop.v.i self.actsprite
+push.v self.victorysprite
+call.i sprite_get_number(argc=1)
+pop.v.v self.victoryframes
+pushi.e 0
+pop.v.i self._sideb
+call.i gml_Script_scr_sideb_get_phase(argc=0)
+pushi.e 2
+cmp.i.v GTE
+bf [15]
+
+:[14]
+pushi.e 1
+pop.v.i self._sideb
+
+:[15]
+push.v self._sideb
+pushi.e 1
+cmp.i.v EQ
+bf [17]
+
+:[16]
+pushi.e 1538
+pop.v.i self.attackreadysprite
+pushi.e 1526
+pop.v.i self.attacksprite
+pushi.e 6
+pop.v.i self.attackframes
+pushi.e 1523
+pop.v.i self.victorysprite
+pushi.e 10
+pop.v.i self.victoryframes
+pushi.e 5
+pop.v.i self.defendframes
+pushi.e 1546
+pop.v.i self.defendsprite
+pushi.e 1549
+pop.v.i self.hurtsprite
+pushi.e 1548
+pop.v.i self.idlesprite
+
+:[17]
+pushi.e 52
+pop.v.i self.mywidth
+pushi.e 86
+pop.v.i self.myheight
+
+:[18]
+push.v self.spellframes
+pop.v.v self.remspellframes
+push.v self.spellsprite
+pop.v.v self.remspellsprite
+
+:[end]
